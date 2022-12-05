@@ -4,13 +4,11 @@ import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import ru.argus.sportsbetting.data.dto.create.BetCreateDto;
 import ru.argus.sportsbetting.data.dto.get.BetGetDto;
 import ru.argus.sportsbetting.service.BetService;
 
 import java.util.List;
-import java.util.UUID;
 
 @Controller
 public class BetController {

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DatabaseMigrationSettings" liquibaseFileType="SQL">
+    <database-infos>
+      <database-info>
+        <option name="enabled" value="true" />
+        <dbms-id>postgres</dbms-id>
+      </database-info>
+    </database-infos>
+  </component>
+  <component name="JpaLiquibaseChangesConfig">
+    <exclude-change idName="pictures" tagName="dropTable" />
+    <exclude-change idName="users#picture_id" tagName="dropColumn" />
+    <exclude-change idName="users#id" tagName="dropColumn" />
+    <exclude-change idName="bets#id" tagName="dropColumn" />
+    <exclude-change idName="bets#match_id" tagName="dropColumn" />
+    <exclude-change idName="bets#team_winner_id" tagName="dropColumn" />
+    <exclude-change idName="bets#user_id" tagName="dropColumn" />
+    <exclude-change idName="matches#id" tagName="dropColumn" />
+    <exclude-change idName="matches#score_id" tagName="dropColumn" />
+    <exclude-change idName="matches#sport_game_id" tagName="dropColumn" />
+    <exclude-change idName="matches#team_away_id" tagName="dropColumn" />
+    <exclude-change idName="matches#team_home_id" tagName="dropColumn" />
+    <exclude-change idName="results#id" tagName="dropColumn" />
+    <exclude-change idName="results#match_id" tagName="dropColumn" />
+    <exclude-change idName="results#score_id" tagName="dropColumn" />
+    <exclude-change idName="scores#id" tagName="dropColumn" />
+    <exclude-change idName="sport_games#id" tagName="dropColumn" />
+    <exclude-change idName="teams#id" tagName="dropColumn" />
+  </component>
+</project>

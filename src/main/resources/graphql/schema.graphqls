@@ -1,0 +1,80 @@
+type Bet {
+    id: ID!
+    user: User!
+    match: Match!
+    teamWinner: Team!
+}
+
+type Match {
+    id: ID!
+    sportGame: SportGame!
+    score: Score
+    teamHome: Team!
+    teamAway: Team!
+}
+
+type MatchDontPlay {
+    id: ID!
+    sportGame: SportGame!
+    teamHome: Team!
+    teamAway: Team!
+}
+
+type Result {
+    id: ID!
+    match: Match!
+    score: Score!
+}
+
+type Score {
+    id: ID!
+    homeTeamScore: Int!
+    awayTeamScore: Int!
+}
+
+type SportGame {
+    id: ID!
+    name: String!
+}
+
+type Team {
+    id: ID!
+    name: String!
+}
+
+type User {
+    id: ID!
+    username: String!
+    password: String!
+    email: String!
+    firstName: String!
+    lastName: String!
+}
+
+input UserCreateInput {
+    username: String!
+    password: String!
+    email: String!
+    firstName: String!
+    lastName: String!
+}
+
+input BetCreateInput {
+    userId: ID!
+    matchId: ID!
+    teamWinnerId: ID!
+}
+
+type Query {
+    getAllUserBets(userId: ID): [Bet]
+    getAllMatches: [Match]
+    playMatches: Boolean
+    getDontPlayMatches: [MatchDontPlay]
+    findUserByUsername(username: String): User
+    getAllScores: [Score]
+}
+
+type Mutation {
+    createBet(betCreateInput: BetCreateInput): Bet
+    createUser(userCreate: UserCreateInput): User
+}
